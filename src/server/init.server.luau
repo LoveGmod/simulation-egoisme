@@ -40,7 +40,7 @@ for i = 1, 5 do
             task.wait(duration + 2)
 
             for i, carrot in pairs(Carrots) do
-                if (dexter.Position - carrot.Position).Magnitude <= 7 then
+                if (dexter.Character.Position - carrot.Position).Magnitude <= 7 then
                     carrot:Destroy()
                     dexter:Eat()
                 end
