@@ -42,6 +42,7 @@ for i = 1, 5 do
                             return
                         end
 
+                        carrot.Eaten = true
                         carrot:Destroy()
                         dexter:Eat()
                     end
