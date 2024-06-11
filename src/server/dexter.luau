@@ -20,7 +20,7 @@ function Dexter:Spawn(position: Vector3)
 end
 
 function Dexter:MoveTo(position: Vector3, tweenTime: number)
-    game:GetService("TweenService"):Create(self.Character, TweenInfo.new(tweenTime), {Position = position}):Play()
+    game:GetService("TweenService"):Create(self.Character, TweenInfo.new(tweenTime, Enum.EasingStyle.Linear), {Position = position}):Play()
 end
 
 function Dexter:Destoy()
