@@ -23,6 +23,10 @@ function Dexter:MoveTo(position: Vector3, tweenTime: number)
     game:GetService("TweenService"):Create(self.Character, TweenInfo.new(tweenTime, Enum.EasingStyle.Linear), {Position = position}):Play()
 end
 
+function Dexter:Eat()
+    self.Points += 1
+end
+
 function Dexter:Destroy()
     if self.Character then
         self.Character:Destroy()
