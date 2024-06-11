@@ -17,5 +17,5 @@ while true do
     print("Données du jour "..tostring(DayCount).." :")
     print("Population : "..Day.TotalDexters)
     print("Carottes mangées : "..Day.EatenCarrots)
-    task.wait(20)
+    task.wait(8)
 end

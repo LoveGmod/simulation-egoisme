@@ -17,6 +17,8 @@ function Day.Init(initialDexter, maxCarrots): {TotalDexters: number, MaxCarrots:
 end
 
 function Day:Start()
+    dayEnabled = true
+
     for i = 1, self.MaxCarrots do
         local carrot = Carrot.new()
         table.insert(Carrots, carrot)
@@ -29,6 +31,8 @@ function Day:Start()
         local dexter = Dexter.new("Dexter"..i)
         table.insert(Dexters, dexter)
         dexter:Spawn(Vector3.new(0, 3, 0))
+
+        print(Dexters)
 
         task.spawn(function()
             task.spawn(function()
@@ -83,7 +87,6 @@ function Day:Stop()
 
     for i, dexter in pairs(Dexters) do
         if dexter.Points < 5 then
-            table.remove(Dexters, dexter)
             self.TotalDexters -= 1
         end
     end
@@ -103,6 +106,8 @@ function Day:Stop()
         self.EatenCarrots += dexter.Points
         dexter.Points = 0
     end
+
+    table.clear(Dexters)
 end
 
 return Day
