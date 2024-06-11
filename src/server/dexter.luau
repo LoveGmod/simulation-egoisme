@@ -14,7 +14,7 @@ function Dexter:Spawn(position: Vector3)
     dexter.Position = position
     dexter.Name = self.Name
     dexter.Anchored = true
-    dexter.Parent = workspace
+    dexter.Parent = workspace.Dexters
 
     self.Character = dexter
 end
