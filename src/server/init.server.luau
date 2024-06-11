@@ -30,22 +30,30 @@ for i = 1, 5 do
     table.insert(Dexters, dexter)
     dexter:Spawn(Vector3.new(0, 3, 0))
     task.spawn(function()
+        task.spawn(function()
+            while true do
+                if dayEnded then
+                    break
+                end
+
+                for i, carrot in pairs(Carrots) do
+                    if (dexter.Character.Position - carrot.Position).Magnitude <= 7 then
+                        carrot:Destroy()
+                        dexter:Eat()
+                    end
+                end
+            end
+        end)
+
         while true do
             if dayEnded then
-                return
+                break
             end
 
             local duration = math.random(3, 7)
             dexter:MoveTo(Vector3.new(math.random(-20, 20), 3, math.random(-20, 20)), duration)
+
             task.wait(duration + 2)
-
-            for i, carrot in pairs(Carrots) do
-                if (dexter.Character.Position - carrot.Position).Magnitude <= 7 then
-                    carrot:Destroy()
-                    dexter:Eat()
-                end
-            end
-
         end
     end)
 end
@@ -61,3 +69,11 @@ for i, dexter in pairs(Dexters) do
         dexter:Destroy()
     end)
 end
+
+local totalEatenCarrots = 0
+
+for i, dexter in pairs(Dexters) do
+    totalEatenCarrots += dexter.Points
+end
+
+print(totalEatenCarrots.."/15 carottes ont été mangées !")

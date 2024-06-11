@@ -32,7 +32,7 @@ function Dexter:Destroy()
         self.Character:Destroy()
         self.Character = nil
     else
-        warn("Character do not exists for dexter "..self)
+        warn("Character do not exists.")
     end
 end
 

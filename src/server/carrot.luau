@@ -25,7 +25,7 @@ function Carrot:Destroy()
         self.Character:Destroy()
         self.Character = nil
     else
-        warn("Character do not exists for carrot "..self)
+        warn("Character do not exists.")
     end
 end
 
