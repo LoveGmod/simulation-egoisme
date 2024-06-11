@@ -8,6 +8,13 @@ local Dexter = require(script.dexter)
 local Dexters = {}
 local dayEnded = false
 
+task.spawn(function()
+    while true do
+        print(Dexters)
+        task.wait(5)
+    end
+end)
+
 for i = 1, 5 do
     local dexter = Dexter.new("Dexter"..i)
     table.insert(Dexters, dexter)
