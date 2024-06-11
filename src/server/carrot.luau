@@ -15,7 +15,7 @@ function Carrot:Spawn()
     carrot.Size = Vector3.new(5, 5, 5)
     carrot.Position = self.Position
     carrot.Anchored = true
-    carrot.Parent = workspace
+    carrot.Parent = workspace.Carrots
 
     self.Character = carrot
 end
