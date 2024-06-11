@@ -1,8 +1,9 @@
 local Dexter = {}
 Dexter.__index = Dexter
 
-function Dexter.new()
+function Dexter.new(name: string)
     local self = setmetatable({}, Dexter)
+    self.Name = name
     self.Points = 0
     return self
 end
@@ -11,6 +12,7 @@ function Dexter:Spawn(position: Vector3)
     local dexter = Instance.new("Part")
     dexter.Size = Vector3.new(5, 5, 5)
     dexter.Position = position
+    dexter.Name = self.Name
     dexter.Parent = workspace
 
     self.Character = dexter
