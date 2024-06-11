@@ -32,8 +32,6 @@ function Day:Start()
         table.insert(Dexters, dexter)
         dexter:Spawn(Vector3.new(0, 3, 0))
 
-        print(Dexters)
-
         task.spawn(function()
             task.spawn(function()
                 while true do
