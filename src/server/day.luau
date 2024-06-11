@@ -84,10 +84,18 @@ function Day:Stop()
     for i, dexter in pairs(Dexters) do
         if dexter.Points < 5 then
             table.remove(Dexters, dexter)
+            self.TotalDexters -= 1
         end
     end
 
-    self.TotalDexters = #Dexters
+    for i, dexter in pairs(Dexters) do
+        local finalPoints = dexter.Points
+        finalPoints -= 5
+
+        finalPoints //= 5
+
+        self.TotalDexters += finalPoints
+    end
 
     self.EatenCarrots = 0
     
