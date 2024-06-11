@@ -21,7 +21,9 @@ function Carrot:Spawn()
     self.Character = carrot
 end
 
-function Carrot:Destroy()
+function Carrot:Eat()
+    self.Eaten = true
+
     if self.Character then
         self.Character:Destroy()
         self.Character = nil

@@ -12,6 +12,10 @@ local dayEnded = false
 
 task.spawn(function()
     while true do
+        if dayEnded then
+            break
+        end
+
         print(Dexters)
         task.wait(5)
     end
@@ -38,13 +42,10 @@ for i = 1, 5 do
 
                 for i, carrot in pairs(Carrots) do
                     if (dexter.Character.Position - carrot.Position).Magnitude <= 7 then
-                        if carrot.Eaten then
-                            return
+                        if not carrot.Eaten then
+                            carrot:Eat()
+                            dexter:Eat()
                         end
-
-                        carrot.Eaten = true
-                        carrot:Destroy()
-                        dexter:Eat()
                     end
                 end
 
