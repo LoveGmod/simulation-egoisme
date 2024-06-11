@@ -42,6 +42,8 @@ for i = 1, 5 do
                         dexter:Eat()
                     end
                 end
+
+                task.wait()
             end
         end)
 
