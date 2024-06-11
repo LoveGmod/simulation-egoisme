@@ -38,6 +38,14 @@ for i = 1, 5 do
             local duration = math.random(3, 7)
             dexter:MoveTo(Vector3.new(math.random(-20, 20), 3, math.random(-20, 20)), duration)
             task.wait(duration + 2)
+
+            for i, carrot in pairs(Carrots) do
+                if (dexter.Position - carrot.Position).Magnitude <= 7 then
+                    carrot:Destroy()
+                    dexter:Eat()
+                end
+            end
+
         end
     end)
 end
