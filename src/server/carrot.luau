@@ -1,10 +1,11 @@
 local Carrot = {}
 Carrot.__index = Carrot
 
-function Carrot.new(): {Position: Vector3}
+function Carrot.new(): {Position: Vector3, Eaten: boolean}
     local self = setmetatable({}, Carrot)
 
     self.Position = Vector3.new(math.random(-20, 20), 3, math.random(-20, 20))
+    self.Eaten = false
 
     return self
 end

@@ -38,6 +38,10 @@ for i = 1, 5 do
 
                 for i, carrot in pairs(Carrots) do
                     if (dexter.Character.Position - carrot.Position).Magnitude <= 7 then
+                        if carrot.Eaten then
+                            return
+                        end
+
                         carrot:Destroy()
                         dexter:Eat()
                     end
