@@ -6,7 +6,7 @@ end)
 
 local DayHandler = require(script.day)
 
-local Day = DayHandler.Init(1, 30)
+local Day = DayHandler.Init(1, 60)
 local DayCount = 0
 
 while true do
