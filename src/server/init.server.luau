@@ -5,7 +5,9 @@ Players.PlayerAdded:Connect(function(player)
 end)
 
 local Dexter = require(script.dexter)
+local Carrot = require(script.carrot)
 local Dexters = {}
+local Carrots = {}
 local dayEnded = false
 
 task.spawn(function()
@@ -14,6 +16,14 @@ task.spawn(function()
         task.wait(5)
     end
 end)
+
+for i = 1, 15 do
+    local carrot = Carrot.new()
+    table.insert(Carrots, carrot)
+    carrot:Spawn()
+end
+
+task.wait(3)
 
 for i = 1, 5 do
     local dexter = Dexter.new("Dexter"..i)
