@@ -1,7 +1,7 @@
 local Dexter = {}
 Dexter.__index = Dexter
 
-function Dexter.new(name: string)
+function Dexter.new(name: string): {Name: string, Points: number}
     local self = setmetatable({}, Dexter)
     self.Name = name
     self.Points = 0
