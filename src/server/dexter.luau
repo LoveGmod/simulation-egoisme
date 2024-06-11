@@ -13,6 +13,7 @@ function Dexter:Spawn(position: Vector3)
     dexter.Size = Vector3.new(5, 5, 5)
     dexter.Position = position
     dexter.Name = self.Name
+    dexter.Anchored = true
     dexter.Parent = workspace
 
     self.Character = dexter
