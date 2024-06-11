@@ -23,9 +23,9 @@ function Dexter:MoveTo(position: Vector3, tweenTime: number)
     game:GetService("TweenService"):Create(self.Character, TweenInfo.new(tweenTime, Enum.EasingStyle.Linear), {Position = position}):Play()
 end
 
-function Dexter:Destoy()
+function Dexter:Destroy()
     if self.Character then
-        self.Character:Destoy()
+        self.Character:Destroy()
         self.Character = nil
     else
         warn("Character do not exists for dexter "..self)

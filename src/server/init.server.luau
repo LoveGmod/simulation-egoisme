@@ -40,6 +40,6 @@ for i, dexter in pairs(Dexters) do
     task.spawn(function()
         dexter:MoveTo(Vector3.new(0, 50, 0), 3)
         task.wait(4)
-        dexter:Destoy()
+        dexter:Destroy()
     end)
 end
