@@ -32,7 +32,7 @@ for i = 1, 5 do
     end)
 end
 
-task.wait(60)
+task.wait(20)
 
 dayEnded = true
 
