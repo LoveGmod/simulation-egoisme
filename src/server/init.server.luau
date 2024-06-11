@@ -38,7 +38,7 @@ dayEnded = true
 
 for i, dexter in pairs(Dexters) do
     task.spawn(function()
-        dexter:MoveTo(Vector3.new(0, 50, 0), 3)
+        dexter:MoveTo(Vector3.new(0, 3, 0), 3)
         task.wait(4)
         dexter:Destroy()
     end)
