@@ -30,19 +30,10 @@ game:GetService("Workspace").Dexters.ChildRemoved:Connect(function()
     end
 end)
 
-local DexterBeingHovered = nil
-
 game:GetService("UserInputService").InputChanged:Connect(function()
     if mouse.Target then
         if mouse.Target.Name:find("Dexter") then
-            if DexterBeingHovered ~= nil and mouse.Target.Name ~= DexterBeingHovered then
-                return
-            end
-            DexterBeingHovered = mouse.Target.Name
-
-            print(DexterBeingHovered)
-        else
-            DexterBeingHovered = nil
+            print("Infos sur "..mouse.Target.Name.." : "..mouse.Target:GetAttribute("carrotsEaten").." carottes mangées.")
         end
     end
 end)
