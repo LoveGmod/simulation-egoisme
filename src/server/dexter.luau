@@ -25,6 +25,7 @@ end
 
 function Dexter:Eat()
     self.Points += 1
+    self.Character:SetAttribute("carrotsEaten", self.Points)
 end
 
 function Dexter:Destroy()
