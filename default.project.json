@@ -3,12 +3,6 @@
   "tree": {
     "$className": "DataModel",
 
-    "ReplicatedStorage": {
-      "Shared": {
-        "$path": "src/shared"
-      }
-    },
-
     "ServerScriptService": {
       "Server": {
         "$path": "src/server"
@@ -19,6 +13,61 @@
       "StarterPlayerScripts": {
         "Client": {
           "$path": "src/client"
+        }
+      }
+    },
+
+    "Workspace": {
+      "$properties": {
+        "FilteringEnabled": true
+      },
+      "Carrots": {
+        "$className": "Folder"
+      },
+      "Dexters": {
+        "$className": "Folder"
+      },
+      "Village": {
+        "$className": "Folder",
+        "Cam": {
+          "$className": "Part",
+          "$properties": {
+          "Anchored": true,
+          "Transparency": 1,
+          "Position": [
+            0,
+            40,
+            0
+          ],
+          "Orientation": [
+            -90,
+            0,
+            0
+          ]
+        }
+        },
+        "Floor": {
+          "$className": "Part",
+          "$properties": {
+          "Anchored": true,
+          "Transparency": 0,
+          "Material": "Grass",
+          "Position": [
+            0,
+            0,
+            0
+          ],
+          "Size": [
+            50,
+            1,
+            50
+          ],
+          "Color": [
+            0.122,
+            0.502,
+            0.114
+          ]
+        }
         }
       }
     }
