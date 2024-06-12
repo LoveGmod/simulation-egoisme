@@ -11,3 +11,19 @@ task.spawn(function()
     task.wait(5)
     game:GetService("StarterGui"):SetCore("ResetButtonCallback", false)
 end)
+
+local Dexters = {}
+
+game:GetService("Workspace").Dexters.ChildAdded:Connect(function()
+    table.clear(Dexters)
+    for i, dexter in pairs(game:GetService("Workspace").Dexters:GetChildren()) do
+        table.insert(Dexters, dexter)
+    end
+end)
+
+game:GetService("Workspace").Dexters.ChildRemoved:Connect(function()
+    table.clear(Dexters)
+    for i, dexter in pairs(game:GetService("Workspace").Dexters:GetChildren()) do
+        table.insert(Dexters, dexter)
+    end
+end)
