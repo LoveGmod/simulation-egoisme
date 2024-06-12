@@ -12,6 +12,8 @@ task.spawn(function()
     game:GetService("StarterGui"):SetCore("ResetButtonCallback", false)
 end)
 
+local player: Player = game:GetService("Players").LocalPlayer
+local mouse: Mouse = player:GetMouse()
 local Dexters = {}
 
 game:GetService("Workspace").Dexters.ChildAdded:Connect(function()
@@ -25,5 +27,22 @@ game:GetService("Workspace").Dexters.ChildRemoved:Connect(function()
     table.clear(Dexters)
     for i, dexter in pairs(game:GetService("Workspace").Dexters:GetChildren()) do
         table.insert(Dexters, dexter)
+    end
+end)
+
+local DexterBeingHovered = nil
+
+game:GetService("UserInputService").InputChanged:Connect(function()
+    if mouse.Target then
+        if mouse.Target.Name:find("Dexter") then
+            if DexterBeingHovered ~= nil and mouse.Target.Name ~= DexterBeingHovered then
+                return
+            end
+            DexterBeingHovered = mouse.Target.Name
+
+            print(DexterBeingHovered)
+        else
+            DexterBeingHovered = nil
+        end
     end
 end)
