@@ -17,6 +17,10 @@
       }
     },
 
+    "StarterGui": {
+      "$path": "src/gui"
+    },
+
     "Workspace": {
       "$properties": {
         "FilteringEnabled": true
